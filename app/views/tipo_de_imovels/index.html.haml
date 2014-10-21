@@ -1,0 +1,19 @@
+%h1 Listing tipo_de_imovels
+
+%table
+  %tr
+    %th Descricao
+    %th
+    %th
+    %th
+
+  - @tipo_de_imovels.each do |tipo_de_imovel|
+    %tr
+      %td= tipo_de_imovel.descricao
+      %td= link_to 'Show', tipo_de_imovel
+      %td= link_to 'Edit', edit_tipo_de_imovel_path(tipo_de_imovel)
+      %td= link_to 'Destroy', tipo_de_imovel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tipo de imovel', new_tipo_de_imovel_path

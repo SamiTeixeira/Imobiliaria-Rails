@@ -1,18 +1,238 @@
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTipoDeImovels (20141021223104)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tipo_de_imovels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141021223104"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
 
 
-Started GET "/" for 127.0.0.1 at 2014-10-20 16:02:14 -0700
-Processing by Rails::WelcomeController#index as HTML
-  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (16.9ms)
-Completed 200 OK in 142ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+Started GET "/tipodeimovels" for 127.0.0.1 at 2014-10-21 15:31:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/tipodeimovels"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/brasil18/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/brasil18/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/brasil18/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
 
 
-Started GET "/" for 127.0.0.1 at 2014-10-20 17:11:16 -0700
-Processing by Rails::WelcomeController#index as HTML
-  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (16.5ms)
-Completed 200 OK in 110ms (Views: 84.8ms | ActiveRecord: 0.0ms)
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (44.4ms)
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (90.0ms)
 
 
-Started GET "/" for 127.0.0.1 at 2014-10-21 10:27:04 -0700
-Processing by Rails::WelcomeController#index as HTML
-  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (17.6ms)
-Completed 200 OK in 195ms (Views: 156.1ms | ActiveRecord: 0.0ms)
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:32:11 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (9.5ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (44.4ms)
+Completed 200 OK in 3082ms (Views: 2982.0ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:17 -0700
+
+
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-21 15:32:20 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (1034.0ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (1044.0ms)
+Completed 200 OK in 1128ms (Views: 1108.9ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:32:25 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9rGSdzo1kF+qrBCfxGzb/YPonQ0ySEQinvkVHCLBKmg=", "tipo_de_imovel"=>{"descricao"=>"casa"}, "commit"=>"Save"}
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (12.7ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-21 22:32:25.571271"], ["descricao", "casa"], ["updated_at", "2014-10-21 22:32:25.571271"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tipo_de_imovels/1
+Completed 302 Found in 46ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:32:25 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-21 15:32:26 -0700
+
+
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:32:31 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (0.3ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (13.1ms)
+Completed 200 OK in 86ms (Views: 84.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:37:18 -0700
+Processing by TipoDeImovelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9rGSdzo1kF+qrBCfxGzb/YPonQ0ySEQinvkVHCLBKmg=", "id"=>"1"}
+  [1m[35mTipoDeImovel Load (6.6ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (7.2ms)[0m  DELETE FROM "tipo_de_imovels" WHERE "tipo_de_imovels"."id" = ?  [["id", 1]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tipo_de_imovels
+Completed 302 Found in 70ms (ActiveRecord: 17.2ms)
+
+
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:37:18 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (0.3ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (11.2ms)
+Completed 200 OK in 220ms (Views: 217.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-21 15:37:18 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-21 15:37:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-21 15:37:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-21 15:37:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-21 15:37:19 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-21 15:37:19 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-21 15:37:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-21 15:37:19 -0700
+
+
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-21 16:00:16 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (399.8ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (414.7ms)
+Completed 200 OK in 635ms (Views: 598.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 16:00:22 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9rGSdzo1kF+qrBCfxGzb/YPonQ0ySEQinvkVHCLBKmg=", "tipo_de_imovel"=>{"descricao"=>""}, "commit"=>"Save"}
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36mSQL (6.1ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-21 23:00:22.148589"], ["descricao", ""], ["updated_at", "2014-10-21 23:00:22.148589"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/tipo_de_imovels/2
+Completed 302 Found in 32ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/tipo_de_imovels/2" for 127.0.0.1 at 2014-10-21 16:00:22 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTipoDeImovel Load (8.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 125ms (Views: 113.9ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-21 16:00:25 -0700
+
+
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 16:00:47 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (75.9ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (639.8ms)
+Completed 200 OK in 1467ms (Views: 1000.0ms | ActiveRecord: 75.9ms)
+
+
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 16:00:50 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (0.2ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (11.9ms)
+Completed 200 OK in 133ms (Views: 131.0ms | ActiveRecord: 0.2ms)

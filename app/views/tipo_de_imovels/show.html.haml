@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Descricao:
+  = @tipo_de_imovel.descricao
+
+= link_to 'Edit', edit_tipo_de_imovel_path(@tipo_de_imovel)
+\|
+= link_to 'Back', tipo_de_imovels_path

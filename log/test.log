@@ -1,0 +1,203 @@
+  [1m[36m (7.1ms)[0m  [1mCREATE TABLE "tipo_de_imovels" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "descricao" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (1.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20141021223104')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-21 15:57:56 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (16.8ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (22.2ms)
+Completed 200 OK in 416ms (Views: 385.3ms | ActiveRecord: 0.5ms)
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:57:57 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-21 22:57:57.368979"], ["descricao", "casa"], ["updated_at", "2014-10-21 22:57:57.368979"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:57:57 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-21 22:57:57.396716"], ["descricao", "MyString"], ["updated_at", "2014-10-21 22:57:57.396716"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tipo_de_imovels/1/edit" for 127.0.0.1 at 2014-10-21 15:57:57 -0700
+Processing by TipoDeImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/_form.html.haml (2.6ms)
+  Rendered tipo_de_imovels/edit.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.1ms)
+Started PATCH "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:57:57 -0700
+Processing by TipoDeImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (6.4ms)[0m  [1mUPDATE "tipo_de_imovels" SET "descricao" = ?, "updated_at" = ? WHERE "tipo_de_imovels"."id" = 1[0m  [["descricao", "casa"], ["updated_at", "2014-10-21 22:57:57.432870"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 14ms (ActiveRecord: 6.7ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:57:57 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-21 22:57:57.456287"], ["descricao", "MyString"], ["updated_at", "2014-10-21 22:57:57.456287"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:57:57 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (0.2ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (5.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-21 15:59:50 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (17.7ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (23.9ms)
+Completed 200 OK in 167ms (Views: 120.7ms | ActiveRecord: 4.6ms)
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:59:50 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-21 22:59:50.975689"], ["descricao", "casa"], ["updated_at", "2014-10-21 22:59:50.975689"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:59:50 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-21 22:59:51.000396"], ["descricao", "MyString"], ["updated_at", "2014-10-21 22:59:51.000396"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tipo_de_imovels/1/edit" for 127.0.0.1 at 2014-10-21 15:59:51 -0700
+Processing by TipoDeImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/_form.html.haml (7.6ms)
+  Rendered tipo_de_imovels/edit.html.haml within layouts/application (18.1ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.1ms)
+Started PATCH "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:59:51 -0700
+Processing by TipoDeImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.2ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (3.3ms)[0m  [1mUPDATE "tipo_de_imovels" SET "descricao" = ?, "updated_at" = ? WHERE "tipo_de_imovels"."id" = 1[0m  [["descricao", "casa"], ["updated_at", "2014-10-21 22:59:51.049285"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 12ms (ActiveRecord: 3.7ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 15:59:51 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-21 22:59:51.065794"], ["descricao", "MyString"], ["updated_at", "2014-10-21 22:59:51.065794"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 15:59:51 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (0.2ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-21 16:01:29 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (16.0ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 216ms (Views: 180.4ms | ActiveRecord: 0.5ms)
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-21 23:01:30.832303"], ["descricao", "casa"], ["updated_at", "2014-10-21 23:01:30.832303"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-10-21 23:01:30.854833"], ["descricao", "MyString"], ["updated_at", "2014-10-21 23:01:30.854833"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tipo_de_imovels/1/edit" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/_form.html.haml (2.0ms)
+  Rendered tipo_de_imovels/edit.html.haml within layouts/application (4.1ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.1ms)
+Started PATCH "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.5ms)[0m  [1mUPDATE "tipo_de_imovels" SET "descricao" = ?, "updated_at" = ? WHERE "tipo_de_imovels"."id" = 1[0m  [["descricao", "casa"], ["updated_at", "2014-10-21 23:01:30.929929"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 9ms (ActiveRecord: 2.8ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-10-21 23:01:30.953699"], ["descricao", "MyString"], ["updated_at", "2014-10-21 23:01:30.953699"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.1ms)
+Started DELETE "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "tipo_de_imovels" WHERE "tipo_de_imovels"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-21 16:01:30 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
