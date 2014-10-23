@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Endereco:
+  = @imovel.endereco
+%p
+  %b Area:
+  = @imovel.area
+%p
+  %b Quarto:
+  = @imovel.quarto
+%p
+  %b Sala:
+  = @imovel.sala
+%p
+  %b Cozinha:
+  = @imovel.cozinha
+%p
+  %b Banheiro:
+  = @imovel.banheiro
+%p
+  %b Areaexterna:
+  = @imovel.areaExterna
+%p
+  %b Areadeservico:
+  = @imovel.areaDeServico
+%p
+  %b Garagem:
+  = @imovel.garagem
+%p
+  %b Tipo de imovel:
+  = @imovel.tipo_de_imovel
+%p
+  %b Proprietario:
+  = @imovel.proprietario
+
+= link_to 'Edit', edit_imovel_path(@imovel)
+\|
+= link_to 'Back', imovels_path

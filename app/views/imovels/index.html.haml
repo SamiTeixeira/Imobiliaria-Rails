@@ -1,0 +1,39 @@
+%h1 Listing imovels
+
+%table
+  %tr
+    %th Endereco
+    %th Area
+    %th Quarto
+    %th Sala
+    %th Cozinha
+    %th Banheiro
+    %th Areaexterna
+    %th Areadeservico
+    %th Garagem
+    %th Tipo de imovel
+    %th Proprietario
+    %th
+    %th
+    %th
+
+  - @imovels.each do |imovel|
+    %tr
+      %td= imovel.endereco
+      %td= imovel.area
+      %td= imovel.quarto
+      %td= imovel.sala
+      %td= imovel.cozinha
+      %td= imovel.banheiro
+      %td= imovel.areaExterna
+      %td= imovel.areaDeServico
+      %td= imovel.garagem
+      %td= imovel.tipo_de_imovel
+      %td= imovel.proprietario
+      %td= link_to 'Show', imovel
+      %td= link_to 'Edit', edit_imovel_path(imovel)
+      %td= link_to 'Destroy', imovel, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Imovel', new_imovel_path
