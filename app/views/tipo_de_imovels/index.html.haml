@@ -3,6 +3,8 @@
 %table
   %tr
     %th Descricao
+    %th Tipodecontrato
+    %th Valor
     %th
     %th
     %th
@@ -10,6 +12,8 @@
   - @tipo_de_imovels.each do |tipo_de_imovel|
     %tr
       %td= tipo_de_imovel.descricao
+      %td= tipo_de_imovel.tipoDeContrato
+      %td= tipo_de_imovel.valor
       %td= link_to 'Show', tipo_de_imovel
       %td= link_to 'Edit', edit_tipo_de_imovel_path(tipo_de_imovel)
       %td= link_to 'Destroy', tipo_de_imovel, :method => :delete, :data => { :confirm => 'Are you sure?' }

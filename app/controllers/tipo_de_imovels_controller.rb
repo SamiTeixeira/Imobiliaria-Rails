@@ -69,6 +69,6 @@ class TipoDeImovelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tipo_de_imovel_params
-      params.require(:tipo_de_imovel).permit(:descricao)
+      params.require(:tipo_de_imovel).permit(:descricao, :tipoDeContrato, :valor)
     end
 end

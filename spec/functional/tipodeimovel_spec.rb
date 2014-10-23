@@ -5,8 +5,8 @@ feature 'Manage Tipo de Imobilia' do
 
 
 scenario 'include Tipo de Imobilia' do # , :js => true do
-visit new_tipo_de_imovel_path
-fill_and_verify_tipo_de_imovel
+	visit new_tipo_de_imovel_path
+	fill_and_verify_tipo_de_imovel
 end
 
 
@@ -26,10 +26,15 @@ end
 
 def fill_and_verify_tipo_de_imovel
 	fill_in 'Descricao', :with => "casa"
+	fill_in 'Tipodecontrato', :with => "venda"
+	fill_in 'Valor', :with => 200500
+
 
 	click_button 'Save'
 
 	expect(page).to have_content 'Descricao: casa'
+	expect(page).to have_content 'Tipodecontrato: venda'
+	expect(page).to have_content 'Valor: 200500'
 
 end
 

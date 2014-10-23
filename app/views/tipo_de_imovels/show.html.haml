@@ -3,6 +3,12 @@
 %p
   %b Descricao:
   = @tipo_de_imovel.descricao
+%p
+  %b Tipodecontrato:
+  = @tipo_de_imovel.tipoDeContrato
+%p
+  %b Valor:
+  = @tipo_de_imovel.valor
 
 = link_to 'Edit', edit_tipo_de_imovel_path(@tipo_de_imovel)
 \|

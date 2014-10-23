@@ -3,5 +3,7 @@
 FactoryGirl.define do
   factory :tipo_de_imovel do
     descricao "MyString"
+    tipoDeContrato "MyString"
+    valor 1.5
   end
 end

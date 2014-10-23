@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021223104) do
+ActiveRecord::Schema.define(version: 20141023195730) do
 
   create_table "tipo_de_imovels", force: true do |t|
     t.string   "descricao"
+    t.string   "tipoDeContrato"
+    t.float    "valor"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
