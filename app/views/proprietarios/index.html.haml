@@ -1,0 +1,27 @@
+%h1 Listing proprietarios
+
+%table
+  %tr
+    %th Nome
+    %th Endereco
+    %th Cpf
+    %th Telefone
+    %th Email
+    %th
+    %th
+    %th
+
+  - @proprietarios.each do |proprietario|
+    %tr
+      %td= proprietario.nome
+      %td= proprietario.endereco
+      %td= proprietario.cpf
+      %td= proprietario.telefone
+      %td= proprietario.email
+      %td= link_to 'Show', proprietario
+      %td= link_to 'Edit', edit_proprietario_path(proprietario)
+      %td= link_to 'Destroy', proprietario, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Proprietario', new_proprietario_path

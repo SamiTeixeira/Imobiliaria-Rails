@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Nome:
+  = @proprietario.nome
+%p
+  %b Endereco:
+  = @proprietario.endereco
+%p
+  %b Cpf:
+  = @proprietario.cpf
+%p
+  %b Telefone:
+  = @proprietario.telefone
+%p
+  %b Email:
+  = @proprietario.email
+
+= link_to 'Edit', edit_proprietario_path(@proprietario)
+\|
+= link_to 'Back', proprietarios_path
