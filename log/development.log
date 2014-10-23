@@ -328,3 +328,307 @@ Processing by TipoDeImovelsController#new as HTML
   Rendered tipo_de_imovels/_form.html.haml (2305.7ms)
   Rendered tipo_de_imovels/new.html.haml within layouts/application (2350.0ms)
 Completed 200 OK in 2431ms (Views: 2419.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-23 13:38:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.6) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.6) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/brasil18/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/brasil18/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/brasil18/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (87.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateProprietarios (20141023201241)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "proprietarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "endereco" varchar(255), "cpf" varchar(255), "telefone" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141023201241"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUsuarios (20141023201650)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar(255), "endereco" varchar(255), "cpf" varchar(255), "telefone" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20141023201650"]]
+  [1m[36m (6.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-23 13:38:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (11.1ms)
+Completed 200 OK in 1152ms (Views: 1115.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/proprietarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/proprietarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:48 -0700
+
+
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-23 13:38:56 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (3.3ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 102ms (Views: 98.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/proprietarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:56 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:56 -0700
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/proprietarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-23 13:38:57 -0700
+
+
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-23 13:39:00 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (670.5ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (722.3ms)
+Completed 200 OK in 928ms (Views: 922.1ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-23 13:41:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/brasil18/.rvm/gems/ruby-2.1.3@ProjetoRails/gems/railties-4.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 84ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-23 13:41:18 -0700
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (3.5ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered usuarios/index.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 206ms (Views: 185.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/proprietarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:41:18 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-23 13:41:18 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-23 13:41:18 -0700
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:41:18 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-23 13:41:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-23 13:41:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-23 13:41:19 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-23 13:41:19 -0700
+
+
+Started GET "/assets/proprietarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:41:19 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-23 13:41:19 -0700
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:41:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-23 13:41:19 -0700
+
+
+Started GET "/usuarios/new" for 127.0.0.1 at 2014-10-23 13:41:21 -0700
+Processing by UsuariosController#new as HTML
+  Rendered usuarios/_form.html.haml (296.6ms)
+  Rendered usuarios/new.html.haml within layouts/application (309.6ms)
+Completed 200 OK in 438ms (Views: 432.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/proprietarios" for 127.0.0.1 at 2014-10-23 13:41:59 -0700
+Processing by ProprietariosController#index as HTML
+  [1m[36mProprietario Load (154.3ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered proprietarios/index.html.haml within layouts/application (1963.0ms)
+Completed 200 OK in 25435ms (Views: 24248.4ms | ActiveRecord: 154.3ms)
+
+
+Started GET "/assets/proprietarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:42:32 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-23 13:42:32 -0700
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:42:32 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-23 13:42:32 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/assets/proprietarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-23 13:42:33 -0700
+
+
+Started GET "/proprietarios/new" for 127.0.0.1 at 2014-10-23 13:43:00 -0700
+Processing by ProprietariosController#new as HTML
+  Rendered proprietarios/_form.html.haml (1793.7ms)
+  Rendered proprietarios/new.html.haml within layouts/application (3256.4ms)
+Completed 200 OK in 11515ms (Views: 10078.3ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/proprietarios/new" for 127.0.0.1 at 2014-10-23 13:58:03 -0700
+Processing by ProprietariosController#new as HTML
+  Rendered proprietarios/_form.html.haml (2733.6ms)
+  Rendered proprietarios/new.html.haml within layouts/application (4758.0ms)
+Completed 200 OK in 14378ms (Views: 11143.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/proprietarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/tipo_de_imovels.css?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/usuarios.css?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/proprietarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/tipo_de_imovels.js?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/usuarios.js?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-23 13:58:23 -0700
