@@ -1120,3 +1120,76 @@ Processing by ProprietariosController#index as HTML
   Rendered proprietarios/index.html.haml within layouts/application (0.7ms)
 Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
   [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+Started GET "/usuarios/new" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#new as HTML
+  Rendered usuarios/_form.html.haml (98.2ms)
+  Rendered usuarios/new.html.haml within layouts/application (136.1ms)
+Completed 200 OK in 408ms (Views: 377.8ms | ActiveRecord: 0.4ms)
+Started POST "/usuarios" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.456.899-00"], ["created_at", "2014-10-23 22:15:22.712723"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-23 22:15:22.712723"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 29ms (ActiveRecord: 2.3ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.2ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "MyString"], ["created_at", "2014-10-23 22:15:22.779602"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-23 22:15:22.779602"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/usuarios/1/edit" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/_form.html.haml (2.7ms)
+  Rendered usuarios/edit.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 49ms (Views: 48.2ms | ActiveRecord: 0.1ms)
+Started PATCH "/usuarios/1" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (80.1ms)[0m  [1mUPDATE "usuarios" SET "cpf" = ?, "email" = ?, "endereco" = ?, "nome" = ?, "telefone" = ?, "updated_at" = ? WHERE "usuarios"."id" = 1[0m  [["cpf", "123.456.899-00"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-23 22:15:22.843001"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 86ms (ActiveRecord: 80.3ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "MyString"], ["created_at", "2014-10-23 22:15:22.942174"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-23 22:15:22.942174"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered usuarios/index.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 33ms (Views: 32.4ms | ActiveRecord: 0.2ms)
+Started DELETE "/usuarios/1" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "usuarios" WHERE "usuarios"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-23 15:15:22 -0700
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered usuarios/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
