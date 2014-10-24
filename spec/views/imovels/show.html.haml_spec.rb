@@ -5,13 +5,13 @@ RSpec.describe "imovels/show", :type => :view do
     @imovel = assign(:imovel, Imovel.create!(
       :endereco => "Endereco",
       :area => 1.5,
-      :quarto => "",
-      :sala => "",
-      :cozinha => "Cozinha",
-      :banheiro => "Banheiro",
+      :quarto => 1,
+      :sala => 2,
+      :cozinha => 3,
+      :banheiro => 4,
       :areaExterna => 1.5,
       :areaDeServico => 1.5,
-      :garagem => "",
+      :garagem => 5,
       :tipo_de_imovel => nil,
       :proprietario => nil
     ))
@@ -21,13 +21,13 @@ RSpec.describe "imovels/show", :type => :view do
     render
     expect(rendered).to match(/Endereco/)
     expect(rendered).to match(/1.5/)
-    expect(rendered).to match(//)
-    expect(rendered).to match(//)
-    expect(rendered).to match(/Cozinha/)
-    expect(rendered).to match(/Banheiro/)
+    expect(rendered).to match(/1/)
+    expect(rendered).to match(/2/)
+    expect(rendered).to match(/3/)
+    expect(rendered).to match(/4/)
     expect(rendered).to match(/1.5/)
     expect(rendered).to match(/1.5/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/5/)
     expect(rendered).to match(//)
     expect(rendered).to match(//)
   end

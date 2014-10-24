@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023201650) do
+ActiveRecord::Schema.define(version: 20141024190631) do
+
+  create_table "imovels", force: true do |t|
+    t.string   "endereco"
+    t.float    "area"
+    t.integer  "quarto"
+    t.integer  "sala"
+    t.integer  "cozinha"
+    t.integer  "banheiro"
+    t.float    "areaExterna"
+    t.float    "areaDeServico"
+    t.integer  "garagem"
+    t.integer  "tipo_de_imovel_id"
+    t.integer  "proprietario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "imovels", ["proprietario_id"], name: "index_imovels_on_proprietario_id"
+  add_index "imovels", ["tipo_de_imovel_id"], name: "index_imovels_on_tipo_de_imovel_id"
 
   create_table "proprietarios", force: true do |t|
     t.string   "nome"
