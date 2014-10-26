@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024221718) do
+ActiveRecord::Schema.define(version: 20141026215000) do
 
   create_table "agendamento_de_visitas", force: true do |t|
     t.date     "data"
@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 20141024221718) do
 
   add_index "imovels", ["proprietario_id"], name: "index_imovels_on_proprietario_id"
   add_index "imovels", ["tipo_de_imovel_id"], name: "index_imovels_on_tipo_de_imovel_id"
+
+  create_table "proposta", force: true do |t|
+    t.float    "valor"
+    t.string   "status"
+    t.integer  "imovel_id"
+    t.integer  "usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "proposta", ["imovel_id"], name: "index_proposta_on_imovel_id"
+  add_index "proposta", ["usuario_id"], name: "index_proposta_on_usuario_id"
 
   create_table "proprietarios", force: true do |t|
     t.string   "nome"
