@@ -1,0 +1,22 @@
+= form_for @propostum do |f|
+  - if @propostum.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@propostum.errors.count, "error")} prohibited this propostum from being saved:"
+      %ul
+        - @propostum.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :valor
+    = f.text_field :valor
+  .field
+    = f.label :status
+    = f.text_field :status
+  .field
+    = f.label :imovel_id
+    = f.collection_select :imovel_id, @imoveis, :id, :endereco
+  .field
+    = f.label :usuario_id
+    = f.collection_select :usuario_id, @usuarios, :id, :nome
+  .actions
+    = f.submit 'Save'

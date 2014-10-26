@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Valor:
+  = @propostum.valor
+%p
+  %b Status:
+  = @propostum.status
+%p
+  %b Imovel:
+  = @propostum.imovel.endereco
+%p
+  %b Usuario:
+  = @propostum.usuario.nome
+
+= link_to 'Edit', edit_propostum_path(@propostum)
+\|
+= link_to 'Back', proposta_path

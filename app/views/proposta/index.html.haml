@@ -1,0 +1,25 @@
+%h1 Proposta
+
+%table
+  %tr
+    %th Valor
+    %th Status
+    %th Imovel
+    %th Usuario
+    %th
+    %th
+    %th
+
+  - @proposta.each do |propostum|
+    %tr
+      %td= propostum.valor
+      %td= propostum.status
+      %td= propostum.imovel
+      %td= propostum.usuario
+      %td= link_to 'Show', propostum
+      %td= link_to 'Edit', edit_propostum_path(propostum)
+      %td= link_to 'Destroy', propostum, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Proposta', new_propostum_path
