@@ -1,0 +1,2 @@
+module AgendamentoDeVisitasHelper
+end

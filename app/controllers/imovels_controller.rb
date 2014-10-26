@@ -15,10 +15,14 @@ class ImovelsController < ApplicationController
   # GET /imovels/new
   def new
     @imovel = Imovel.new
+      @todosproprietarios = Proprietario.all
+      @todosimoveis = TipoDeImovel.all
   end
 
   # GET /imovels/1/edit
   def edit
+    @todosproprietarios = Proprietario.all
+    @todosimoveis = TipoDeImovel.all
   end
 
   # POST /imovels

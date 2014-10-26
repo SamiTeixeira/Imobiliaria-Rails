@@ -1,0 +1,25 @@
+%h1 Listing agendamento_de_visitas
+
+%table
+  %tr
+    %th Data
+    %th Hora
+    %th Imovel
+    %th Usuario
+    %th
+    %th
+    %th
+
+  - @agendamento_de_visitas.each do |agendamento_de_visita|
+    %tr
+      %td= agendamento_de_visita.data
+      %td= agendamento_de_visita.hora
+      %td= agendamento_de_visita.imovel
+      %td= agendamento_de_visita.usuario
+      %td= link_to 'Show', agendamento_de_visita
+      %td= link_to 'Edit', edit_agendamento_de_visita_path(agendamento_de_visita)
+      %td= link_to 'Destroy', agendamento_de_visita, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Agendamento de visita', new_agendamento_de_visita_path

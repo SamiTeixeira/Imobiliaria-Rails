@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :agendamento_de_visitas
+
   resources :imovels
 
   resources :usuarios

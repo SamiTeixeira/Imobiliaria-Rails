@@ -34,10 +34,10 @@
     = f.label :garagem
     = f.number_field :garagem
   .field
-    = f.label :tipo_de_imovel
-    = f.text_field :tipo_de_imovel
+    = f.label :tipo_de_imovel_id
+    = f.collection_select :tipo_de_imovel_id, @todosimoveis, :id, :descricao
   .field
-    = f.label :proprietario
-    = f.text_field :proprietario
+    = f.label :proprietario_id
+    = f.collection_select :proprietario_id, @todosproprietarios, :id, :nome
   .actions
     = f.submit 'Save'

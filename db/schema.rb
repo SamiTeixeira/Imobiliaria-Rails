@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024190631) do
+ActiveRecord::Schema.define(version: 20141024221718) do
+
+  create_table "agendamento_de_visitas", force: true do |t|
+    t.date     "data"
+    t.string   "hora"
+    t.integer  "imovel_id"
+    t.integer  "usuario_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "agendamento_de_visitas", ["imovel_id"], name: "index_agendamento_de_visitas_on_imovel_id"
+  add_index "agendamento_de_visitas", ["usuario_id"], name: "index_agendamento_de_visitas_on_usuario_id"
 
   create_table "imovels", force: true do |t|
     t.string   "endereco"

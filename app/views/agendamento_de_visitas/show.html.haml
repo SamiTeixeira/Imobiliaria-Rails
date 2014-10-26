@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Data:
+  = @agendamento_de_visita.data
+%p
+  %b Hora:
+  = @agendamento_de_visita.hora
+%p
+  %b Imovel:
+  = @agendamento_de_visita.imovel.endereco
+%p
+  %b Usuario:
+  = @agendamento_de_visita.usuario.nome
+
+= link_to 'Edit', edit_agendamento_de_visita_path(@agendamento_de_visita)
+\|
+= link_to 'Back', agendamento_de_visitas_path

@@ -29,10 +29,10 @@
   = @imovel.garagem
 %p
   %b Tipo de imovel:
-  = @imovel.tipo_de_imovel
+  = @imovel.tipo_de_imovel.descricao
 %p
   %b Proprietario:
-  = @imovel.proprietario
+  = @imovel.proprietario.nome
 
 = link_to 'Edit', edit_imovel_path(@imovel)
 \|
