@@ -5344,3 +5344,1548 @@ Processing by UsuariosController#index as HTML
   Rendered usuarios/index.html.haml within layouts/application (0.8ms)
 Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.1ms)
   [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:36.595052"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-26 23:10:36.595052"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (24.8ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:36.607250"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:36.607250"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/agendamento_de_visitas/new" for 127.0.0.1 at 2014-10-26 16:10:36 -0700
+Processing by AgendamentoDeVisitasController#new as HTML
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered agendamento_de_visitas/_form.html.haml (85.8ms)
+  Rendered agendamento_de_visitas/new.html.haml within layouts/application (116.5ms)
+Completed 200 OK in 6614ms (Views: 6601.8ms | ActiveRecord: 0.6ms)
+Started POST "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#create as HTML
+  Parameters: {"utf8"=>"✓", "agendamento_de_visita"=>{"data(1i)"=>"2014", "data(2i)"=>"10", "data(3i)"=>"26", "hora"=>"1", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save"}
+  [1m[36m (1.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-26 23:10:43.335767"], ["data", "2014-10-26"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-26 23:10:43.335767"], ["usuario_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/agendamento_de_visitas/1
+Completed 302 Found in 20ms (ActiveRecord: 3.6ms)
+Started GET "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.3ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.2ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/show.html.haml within layouts/application (12.2ms)
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 0.7ms)
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:43.421985"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-26 23:10:43.421985"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:43.426536"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:43.426536"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-26 23:10:43.429988"], ["data", "2014-10-26"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-26 23:10:43.429988"], ["usuario_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/agendamento_de_visitas/1/edit" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.1ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.3ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  [1m[35mUsuario Load (0.2ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered agendamento_de_visitas/_form.html.haml (7.9ms)
+  Rendered agendamento_de_visitas/edit.html.haml within layouts/application (10.1ms)
+Completed 200 OK in 85ms (Views: 83.6ms | ActiveRecord: 0.5ms)
+Started PATCH "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#update as HTML
+  Parameters: {"utf8"=>"✓", "agendamento_de_visita"=>{"data(1i)"=>"2014", "data(2i)"=>"10", "data(3i)"=>"26", "hora"=>"1", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mAgendamentoDeVisita Load (0.1ms)[0m  [1mSELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/agendamento_de_visitas/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.1ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:43.574599"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-26 23:10:43.574599"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:43.577234"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:43.577234"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-26 23:10:43.579694"], ["data", "2014-10-26"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-26 23:10:43.579694"], ["usuario_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#index as HTML
+  [1m[35mAgendamentoDeVisita Load (0.2ms)[0m  SELECT "agendamento_de_visitas".* FROM "agendamento_de_visitas"
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.3ms)
+Started DELETE "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAgendamentoDeVisita Load (0.2ms)[0m  [1mSELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "agendamento_de_visitas" WHERE "agendamento_de_visitas"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/agendamento_de_visitas
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by AgendamentoDeVisitasController#index as HTML
+  [1m[36mAgendamentoDeVisita Load (0.2ms)[0m  [1mSELECT "agendamento_de_visitas".* FROM "agendamento_de_visitas"[0m
+  Rendered agendamento_de_visitas/index.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:43.715564"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:43.715564"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-26 23:10:43.728245"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-26 23:10:43.728245"], ["valor", 200000.0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/imovels/new" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by ImovelsController#new as HTML
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered imovels/_form.html.haml (22.5ms)
+  Rendered imovels/new.html.haml within layouts/application (25.4ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.3ms)
+Started POST "/imovels" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by ImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "imovel"=>{"endereco"=>"campos", "area"=>"80.5", "quarto"=>"1", "sala"=>"1", "cozinha"=>"1", "banheiro"=>"1", "areaExterna"=>"30.5", "areaDeServico"=>"1", "garagem"=>"1", "tipo_de_imovel_id"=>"1", "proprietario_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 80.5], ["areaDeServico", 1.0], ["areaExterna", 30.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:43.836736"], ["endereco", "campos"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-26 23:10:43.836736"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/imovels/1
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/imovels/1" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by ImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered imovels/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:43.901099"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:43.901099"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-26 23:10:43.903265"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-26 23:10:43.903265"], ["valor", 200000.0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.5], ["areaDeServico", 1.5], ["areaExterna", 1.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:43.906210"], ["endereco", "MyString"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-26 23:10:43.906210"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/imovels/1/edit" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by ImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTipoDeImovel Load (0.3ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  [1m[36mProprietario Load (0.2ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered imovels/_form.html.haml (14.6ms)
+  Rendered imovels/edit.html.haml within layouts/application (16.7ms)
+Completed 200 OK in 74ms (Views: 67.4ms | ActiveRecord: 0.6ms)
+Started PATCH "/imovels/1" for 127.0.0.1 at 2014-10-26 16:10:43 -0700
+Processing by ImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "imovel"=>{"endereco"=>"campos", "area"=>"80.5", "quarto"=>"1", "sala"=>"1", "cozinha"=>"1", "banheiro"=>"1", "areaExterna"=>"30.5", "areaDeServico"=>"1", "garagem"=>"1", "tipo_de_imovel_id"=>"1", "proprietario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "imovels" SET "area" = ?, "areaDeServico" = ?, "areaExterna" = ?, "endereco" = ?, "updated_at" = ? WHERE "imovels"."id" = 1  [["area", 80.5], ["areaDeServico", 1.0], ["areaExterna", 30.5], ["endereco", "campos"], ["updated_at", "2014-10-26 23:10:44.003307"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/imovels/1
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+Started GET "/imovels/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered imovels/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 44.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:44.075639"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:44.075639"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-26 23:10:44.077766"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-26 23:10:44.077766"], ["valor", 200000.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.5], ["areaDeServico", 1.5], ["areaExterna", 1.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:44.079899"], ["endereco", "MyString"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-26 23:10:44.079899"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/imovels" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ImovelsController#index as HTML
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered imovels/index.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.4ms)
+Started DELETE "/imovels/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ImovelsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "imovels" WHERE "imovels"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/imovels
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/imovels" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ImovelsController#index as HTML
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imovels/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:44.200145"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-26 23:10:44.200145"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:44.203934"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:44.203934"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/proposta/new" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#new as HTML
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered proposta/_form.html.haml (10.9ms)
+  Rendered proposta/new.html.haml within layouts/application (13.8ms)
+Completed 200 OK in 105ms (Views: 92.8ms | ActiveRecord: 0.8ms)
+Started POST "/proposta" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#create as HTML
+  Parameters: {"utf8"=>"✓", "propostum"=>{"valor"=>"200.0", "status"=>"pendente", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-26 23:10:44.332762"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-26 23:10:44.332762"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proposta/1
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+Started GET "/proposta/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.2ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/show.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:44.407099"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-26 23:10:44.407099"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:44.409799"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:44.409799"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-26 23:10:44.412163"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-26 23:10:44.412163"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proposta/1/edit" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.1ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered proposta/_form.html.haml (8.6ms)
+  Rendered proposta/edit.html.haml within layouts/application (14.8ms)
+Completed 200 OK in 67ms (Views: 63.1ms | ActiveRecord: 0.6ms)
+Started PATCH "/proposta/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#update as HTML
+  Parameters: {"utf8"=>"✓", "propostum"=>{"valor"=>"200.0", "status"=>"pendente", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proposta/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/proposta/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.1ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/show.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-26 23:10:44.549569"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-26 23:10:44.549569"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-26 23:10:44.552896"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-26 23:10:44.552896"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-26 23:10:44.555652"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-26 23:10:44.555652"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proposta" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#index as HTML
+  [1m[36mPropostum Load (0.2ms)[0m  [1mSELECT "proposta".* FROM "proposta"[0m
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/index.html.haml within layouts/application (7.6ms)
+Completed 200 OK in 53ms (Views: 52.3ms | ActiveRecord: 0.3ms)
+Started DELETE "/proposta/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "proposta" WHERE "proposta"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proposta
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/proposta" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by PropostaController#index as HTML
+  [1m[35mPropostum Load (0.2ms)[0m  SELECT "proposta".* FROM "proposta"
+  Rendered proposta/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/proprietarios/new" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ProprietariosController#new as HTML
+  Rendered proprietarios/_form.html.haml (10.4ms)
+  Rendered proprietarios/new.html.haml within layouts/application (32.9ms)
+Completed 200 OK in 91ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+Started POST "/proprietarios" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ProprietariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "proprietario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.456.899-00"], ["created_at", "2014-10-26 23:10:44.769678"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-26 23:10:44.769678"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proprietarios/1
+Completed 302 Found in 6ms (ActiveRecord: 1.0ms)
+Started GET "/proprietarios/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ProprietariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.2ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered proprietarios/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "MyString"], ["created_at", "2014-10-26 23:10:44.825353"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-26 23:10:44.825353"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/proprietarios/1/edit" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ProprietariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered proprietarios/_form.html.haml (10.6ms)
+  Rendered proprietarios/edit.html.haml within layouts/application (13.2ms)
+Completed 200 OK in 64ms (Views: 62.5ms | ActiveRecord: 0.1ms)
+Started PATCH "/proprietarios/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ProprietariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "proprietario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "proprietarios" SET "cpf" = ?, "email" = ?, "endereco" = ?, "nome" = ?, "telefone" = ?, "updated_at" = ? WHERE "proprietarios"."id" = 1[0m  [["cpf", "123.456.899-00"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-26 23:10:44.904721"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proprietarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/proprietarios/1" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ProprietariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proprietarios/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 36.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "MyString"], ["created_at", "2014-10-26 23:10:44.956875"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-26 23:10:44.956875"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proprietarios" for 127.0.0.1 at 2014-10-26 16:10:44 -0700
+Processing by ProprietariosController#index as HTML
+  [1m[36mProprietario Load (0.2ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered proprietarios/index.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.2ms)
+Started DELETE "/proprietarios/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by ProprietariosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "proprietarios" WHERE "proprietarios"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proprietarios
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/proprietarios" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by ProprietariosController#index as HTML
+  [1m[35mProprietario Load (0.2ms)[0m  SELECT "proprietarios".* FROM "proprietarios"
+  Rendered proprietarios/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 37ms (Views: 36.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (5.9ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.0ms)
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa", "tipoDeContrato"=>"venda", "valor"=>"200500"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-26 23:10:45.134514"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-26 23:10:45.134514"], ["valor", 200500.0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (2.1ms)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-26 23:10:45.198944"], ["descricao", "MyString"], ["tipoDeContrato", "MyString"], ["updated_at", "2014-10-26 23:10:45.198944"], ["valor", 1.5]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tipo_de_imovels/1/edit" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/_form.html.haml (3.0ms)
+  Rendered tipo_de_imovels/edit.html.haml within layouts/application (9.4ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.1ms)
+Started PATCH "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa", "tipoDeContrato"=>"venda", "valor"=>"200500"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tipo_de_imovels" SET "descricao" = ?, "tipoDeContrato" = ?, "updated_at" = ?, "valor" = ? WHERE "tipo_de_imovels"."id" = 1[0m  [["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-26 23:10:45.281099"], ["valor", 200500.0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 34.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-26 23:10:45.330312"], ["descricao", "MyString"], ["tipoDeContrato", "MyString"], ["updated_at", "2014-10-26 23:10:45.330312"], ["valor", 1.5]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (0.2ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 54ms (Views: 52.8ms | ActiveRecord: 0.2ms)
+Started DELETE "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "tipo_de_imovels" WHERE "tipo_de_imovels"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/usuarios/new" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#new as HTML
+  Rendered usuarios/_form.html.haml (7.6ms)
+  Rendered usuarios/new.html.haml within layouts/application (16.3ms)
+Completed 200 OK in 64ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+Started POST "/usuarios" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.456.899-00"], ["created_at", "2014-10-26 23:10:45.511907"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-26 23:10:45.511907"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (2.9ms)
+Completed 200 OK in 38ms (Views: 35.7ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "MyString"], ["created_at", "2014-10-26 23:10:45.563723"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-26 23:10:45.563723"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/usuarios/1/edit" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/_form.html.haml (8.6ms)
+  Rendered usuarios/edit.html.haml within layouts/application (11.1ms)
+Completed 200 OK in 72ms (Views: 71.2ms | ActiveRecord: 0.1ms)
+Started PATCH "/usuarios/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "usuarios" SET "cpf" = ?, "email" = ?, "endereco" = ?, "nome" = ?, "telefone" = ?, "updated_at" = ? WHERE "usuarios"."id" = 1[0m  [["cpf", "123.456.899-00"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-26 23:10:45.651040"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "MyString"], ["created_at", "2014-10-26 23:10:45.701939"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-26 23:10:45.701939"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered usuarios/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 55ms (Views: 54.1ms | ActiveRecord: 0.2ms)
+Started DELETE "/usuarios/1" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "usuarios" WHERE "usuarios"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-26 16:10:45 -0700
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (0.2ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered usuarios/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:05.487026"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 17:56:05.487026"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:05.521759"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:05.521759"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/agendamento_de_visitas/new" for 127.0.0.1 at 2014-10-27 10:56:05 -0700
+Processing by AgendamentoDeVisitasController#new as HTML
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered agendamento_de_visitas/_form.html.haml (64.4ms)
+  Rendered agendamento_de_visitas/new.html.haml within layouts/application (79.0ms)
+Completed 200 OK in 297ms (Views: 271.7ms | ActiveRecord: 0.6ms)
+Started POST "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-27 10:56:05 -0700
+Processing by AgendamentoDeVisitasController#create as HTML
+  Parameters: {"utf8"=>"✓", "agendamento_de_visita"=>{"data(1i)"=>"2014", "data(2i)"=>"10", "data(3i)"=>"27", "hora"=>"1", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-27 17:56:05.910526"], ["data", "2014-10-27"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-27 17:56:05.910526"], ["usuario_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/agendamento_de_visitas/1
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 10:56:05 -0700
+Processing by AgendamentoDeVisitasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.2ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.2ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/show.html.haml within layouts/application (21.5ms)
+Completed 200 OK in 54ms (Views: 50.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.038928"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 17:56:06.038928"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.041103"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.041103"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-27 17:56:06.043357"], ["data", "2014-10-27"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-27 17:56:06.043357"], ["usuario_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/agendamento_de_visitas/1/edit" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by AgendamentoDeVisitasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.1ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered agendamento_de_visitas/_form.html.haml (6.7ms)
+  Rendered agendamento_de_visitas/edit.html.haml within layouts/application (8.8ms)
+Completed 200 OK in 50ms (Views: 46.7ms | ActiveRecord: 0.4ms)
+Started PATCH "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by AgendamentoDeVisitasController#update as HTML
+  Parameters: {"utf8"=>"✓", "agendamento_de_visita"=>{"data(1i)"=>"2014", "data(2i)"=>"10", "data(3i)"=>"27", "hora"=>"1", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mAgendamentoDeVisita Load (0.1ms)[0m  [1mSELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/agendamento_de_visitas/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by AgendamentoDeVisitasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.1ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.0ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 28.8ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.146505"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 17:56:06.146505"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.148602"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.148602"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-27 17:56:06.150517"], ["data", "2014-10-27"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-27 17:56:06.150517"], ["usuario_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by AgendamentoDeVisitasController#index as HTML
+  [1m[35mAgendamentoDeVisita Load (0.2ms)[0m  SELECT "agendamento_de_visitas".* FROM "agendamento_de_visitas"
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/index.html.haml within layouts/application (6.5ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+Started DELETE "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by AgendamentoDeVisitasController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAgendamentoDeVisita Load (0.1ms)[0m  [1mSELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "agendamento_de_visitas" WHERE "agendamento_de_visitas"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/agendamento_de_visitas
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+Started GET "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by AgendamentoDeVisitasController#index as HTML
+  [1m[36mAgendamentoDeVisita Load (0.1ms)[0m  [1mSELECT "agendamento_de_visitas".* FROM "agendamento_de_visitas"[0m
+  Rendered agendamento_de_visitas/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.244824"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.244824"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 17:56:06.256024"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 17:56:06.256024"], ["valor", 200000.0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/imovels/new" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#new as HTML
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered imovels/_form.html.haml (22.9ms)
+  Rendered imovels/new.html.haml within layouts/application (26.0ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.3ms)
+Started POST "/imovels" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "imovel"=>{"endereco"=>"campos", "area"=>"80.5", "quarto"=>"1", "sala"=>"1", "cozinha"=>"1", "banheiro"=>"1", "areaExterna"=>"30.5", "areaDeServico"=>"1", "garagem"=>"1", "tipo_de_imovel_id"=>"1", "proprietario_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 80.5], ["areaDeServico", 1.0], ["areaExterna", 30.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.343367"], ["endereco", "campos"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-27 17:56:06.343367"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/imovels/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+Started GET "/imovels/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered imovels/show.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.410731"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.410731"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 17:56:06.412479"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 17:56:06.412479"], ["valor", 200000.0]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.5], ["areaDeServico", 1.5], ["areaExterna", 1.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.414673"], ["endereco", "MyString"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-27 17:56:06.414673"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/imovels/1/edit" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  [1m[36mProprietario Load (0.2ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered imovels/_form.html.haml (14.3ms)
+  Rendered imovels/edit.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 61ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+Started PATCH "/imovels/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "imovel"=>{"endereco"=>"campos", "area"=>"80.5", "quarto"=>"1", "sala"=>"1", "cozinha"=>"1", "banheiro"=>"1", "areaExterna"=>"30.5", "areaDeServico"=>"1", "garagem"=>"1", "tipo_de_imovel_id"=>"1", "proprietario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "imovels" SET "area" = ?, "areaDeServico" = ?, "areaExterna" = ?, "endereco" = ?, "updated_at" = ? WHERE "imovels"."id" = 1  [["area", 80.5], ["areaDeServico", 1.0], ["areaExterna", 30.5], ["endereco", "campos"], ["updated_at", "2014-10-27 17:56:06.496640"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/imovels/1
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+Started GET "/imovels/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProprietario Load (0.0ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered imovels/show.html.haml within layouts/application (1.8ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.553667"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.553667"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 17:56:06.556208"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 17:56:06.556208"], ["valor", 200000.0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.5], ["areaDeServico", 1.5], ["areaExterna", 1.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.558937"], ["endereco", "MyString"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-27 17:56:06.558937"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/imovels" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#index as HTML
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered imovels/index.html.haml within layouts/application (9.0ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.3ms)
+Started DELETE "/imovels/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "imovels" WHERE "imovels"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/imovels
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/imovels" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by ImovelsController#index as HTML
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imovels/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.661036"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 17:56:06.661036"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.663061"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.663061"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/proposta/new" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by PropostaController#new as HTML
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mUsuario Load (0.2ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered proposta/_form.html.haml (17.6ms)
+  Rendered proposta/new.html.haml within layouts/application (20.0ms)
+Completed 200 OK in 60ms (Views: 48.9ms | ActiveRecord: 1.0ms)
+Started POST "/proposta" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by PropostaController#create as HTML
+  Parameters: {"utf8"=>"✓", "propostum"=>{"valor"=>"200.0", "status"=>"pendente", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 17:56:06.736229"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-27 17:56:06.736229"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proposta/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/proposta/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by PropostaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.1ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/show.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.794661"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 17:56:06.794661"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.798940"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.798940"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 17:56:06.801326"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-27 17:56:06.801326"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proposta/1/edit" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by PropostaController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.1ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mUsuario Load (0.3ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered proposta/_form.html.haml (8.5ms)
+  Rendered proposta/edit.html.haml within layouts/application (17.2ms)
+Completed 200 OK in 92ms (Views: 90.7ms | ActiveRecord: 0.5ms)
+Started PATCH "/proposta/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by PropostaController#update as HTML
+  Parameters: {"utf8"=>"✓", "propostum"=>{"valor"=>"200.0", "status"=>"pendente", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proposta/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/proposta/1" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by PropostaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.1ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/show.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 17:56:06.956540"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 17:56:06.956540"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 17:56:06.958737"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 17:56:06.958737"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 17:56:06.960785"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-27 17:56:06.960785"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proposta" for 127.0.0.1 at 2014-10-27 10:56:06 -0700
+Processing by PropostaController#index as HTML
+  [1m[36mPropostum Load (0.3ms)[0m  [1mSELECT "proposta".* FROM "proposta"[0m
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/index.html.haml within layouts/application (9.6ms)
+Completed 200 OK in 53ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+Started DELETE "/proposta/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by PropostaController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "proposta" WHERE "proposta"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proposta
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/proposta" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by PropostaController#index as HTML
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT "proposta".* FROM "proposta"
+  Rendered proposta/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/proprietarios/new" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#new as HTML
+  Rendered proprietarios/_form.html.haml (7.8ms)
+  Rendered proprietarios/new.html.haml within layouts/application (16.3ms)
+Completed 200 OK in 59ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+Started POST "/proprietarios" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "proprietario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.456.899-00"], ["created_at", "2014-10-27 17:56:07.130646"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 17:56:07.130646"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proprietarios/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/proprietarios/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered proprietarios/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "MyString"], ["created_at", "2014-10-27 17:56:07.176342"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 17:56:07.176342"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/proprietarios/1/edit" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered proprietarios/_form.html.haml (2.6ms)
+  Rendered proprietarios/edit.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 65ms (Views: 64.2ms | ActiveRecord: 0.1ms)
+Started PATCH "/proprietarios/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "proprietario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "proprietarios" SET "cpf" = ?, "email" = ?, "endereco" = ?, "nome" = ?, "telefone" = ?, "updated_at" = ? WHERE "proprietarios"."id" = 1[0m  [["cpf", "123.456.899-00"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 17:56:07.255897"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proprietarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/proprietarios/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proprietarios/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "MyString"], ["created_at", "2014-10-27 17:56:07.309439"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 17:56:07.309439"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proprietarios" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#index as HTML
+  [1m[36mProprietario Load (0.2ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered proprietarios/index.html.haml within layouts/application (5.3ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+Started DELETE "/proprietarios/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "proprietarios" WHERE "proprietarios"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proprietarios
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/proprietarios" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by ProprietariosController#index as HTML
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT "proprietarios".* FROM "proprietarios"
+  Rendered proprietarios/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (9.0ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (14.0ms)
+Completed 200 OK in 61ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa", "tipoDeContrato"=>"venda", "valor"=>"200500"}, "commit"=>"Save"}
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 17:56:07.480651"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 17:56:07.480651"], ["valor", 200500.0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 17:56:07.535737"], ["descricao", "MyString"], ["tipoDeContrato", "MyString"], ["updated_at", "2014-10-27 17:56:07.535737"], ["valor", 1.5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tipo_de_imovels/1/edit" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/_form.html.haml (2.2ms)
+  Rendered tipo_de_imovels/edit.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 44ms (Views: 43.2ms | ActiveRecord: 0.1ms)
+Started PATCH "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa", "tipoDeContrato"=>"venda", "valor"=>"200500"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tipo_de_imovels" SET "descricao" = ?, "tipoDeContrato" = ?, "updated_at" = ?, "valor" = ? WHERE "tipo_de_imovels"."id" = 1[0m  [["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 17:56:07.591815"], ["valor", 200500.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 17:56:07.653843"], ["descricao", "MyString"], ["tipoDeContrato", "MyString"], ["updated_at", "2014-10-27 17:56:07.653843"], ["valor", 1.5]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (1.6ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 54ms (Views: 52.1ms | ActiveRecord: 1.6ms)
+Started DELETE "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "tipo_de_imovels" WHERE "tipo_de_imovels"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/usuarios/new" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by UsuariosController#new as HTML
+  Rendered usuarios/_form.html.haml (10.6ms)
+  Rendered usuarios/new.html.haml within layouts/application (12.6ms)
+Completed 200 OK in 55ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+Started POST "/usuarios" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by UsuariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.456.899-00"], ["created_at", "2014-10-27 17:56:07.826190"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 17:56:07.826190"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "MyString"], ["created_at", "2014-10-27 17:56:07.882279"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 17:56:07.882279"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/usuarios/1/edit" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by UsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/_form.html.haml (7.1ms)
+  Rendered usuarios/edit.html.haml within layouts/application (8.9ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.1ms)
+Started PATCH "/usuarios/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by UsuariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "usuarios" SET "cpf" = ?, "email" = ?, "endereco" = ?, "nome" = ?, "telefone" = ?, "updated_at" = ? WHERE "usuarios"."id" = 1[0m  [["cpf", "123.456.899-00"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 17:56:07.943191"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-27 10:56:07 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 38.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "MyString"], ["created_at", "2014-10-27 17:56:07.999294"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 17:56:07.999294"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-27 10:56:08 -0700
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered usuarios/index.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 50ms (Views: 48.6ms | ActiveRecord: 0.4ms)
+Started DELETE "/usuarios/1" for 127.0.0.1 at 2014-10-27 10:56:08 -0700
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "usuarios" WHERE "usuarios"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-27 10:56:08 -0700
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (0.2ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered usuarios/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:25.925610"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 18:33:25.925610"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:25.939535"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:25.939535"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/agendamento_de_visitas/new" for 127.0.0.1 at 2014-10-27 11:33:25 -0700
+Processing by AgendamentoDeVisitasController#new as HTML
+  [1m[36mImovel Load (0.3ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered agendamento_de_visitas/_form.html.haml (73.3ms)
+  Rendered agendamento_de_visitas/new.html.haml within layouts/application (104.3ms)
+Completed 200 OK in 480ms (Views: 467.8ms | ActiveRecord: 0.7ms)
+Started POST "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#create as HTML
+  Parameters: {"utf8"=>"✓", "agendamento_de_visita"=>{"data(1i)"=>"2014", "data(2i)"=>"10", "data(3i)"=>"27", "hora"=>"1", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-27 18:33:26.479168"], ["data", "2014-10-27"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-27 18:33:26.479168"], ["usuario_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/agendamento_de_visitas/1
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+Started GET "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.2ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/show.html.haml within layouts/application (8.8ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:26.598160"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 18:33:26.598160"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:26.601163"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:26.601163"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-27 18:33:26.603773"], ["data", "2014-10-27"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-27 18:33:26.603773"], ["usuario_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/agendamento_de_visitas/1/edit" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.1ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered agendamento_de_visitas/_form.html.haml (8.2ms)
+  Rendered agendamento_de_visitas/edit.html.haml within layouts/application (13.1ms)
+Completed 200 OK in 56ms (Views: 53.3ms | ActiveRecord: 0.5ms)
+Started PATCH "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#update as HTML
+  Parameters: {"utf8"=>"✓", "agendamento_de_visita"=>{"data(1i)"=>"2014", "data(2i)"=>"10", "data(3i)"=>"27", "hora"=>"1", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mAgendamentoDeVisita Load (0.1ms)[0m  [1mSELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/agendamento_de_visitas/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+Started GET "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAgendamentoDeVisita Load (0.1ms)[0m  SELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 41ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:26.734974"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 18:33:26.734974"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:26.737801"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:26.737801"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "agendamento_de_visitas" ("created_at", "data", "hora", "imovel_id", "updated_at", "usuario_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-10-27 18:33:26.740026"], ["data", "2014-10-27"], ["hora", "1"], ["imovel_id", 1], ["updated_at", "2014-10-27 18:33:26.740026"], ["usuario_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#index as HTML
+  [1m[35mAgendamentoDeVisita Load (0.2ms)[0m  SELECT "agendamento_de_visitas".* FROM "agendamento_de_visitas"
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUsuario Load (0.0ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered agendamento_de_visitas/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 44ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+Started DELETE "/agendamento_de_visitas/1" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAgendamentoDeVisita Load (0.1ms)[0m  [1mSELECT  "agendamento_de_visitas".* FROM "agendamento_de_visitas"  WHERE "agendamento_de_visitas"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "agendamento_de_visitas" WHERE "agendamento_de_visitas"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/agendamento_de_visitas
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/agendamento_de_visitas" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by AgendamentoDeVisitasController#index as HTML
+  [1m[36mAgendamentoDeVisita Load (0.1ms)[0m  [1mSELECT "agendamento_de_visitas".* FROM "agendamento_de_visitas"[0m
+  Rendered agendamento_de_visitas/index.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 31ms (Views: 30.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:26.835396"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:26.835396"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 18:33:26.846139"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 18:33:26.846139"], ["valor", 200000.0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/imovels/new" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by ImovelsController#new as HTML
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered imovels/_form.html.haml (21.6ms)
+  Rendered imovels/new.html.haml within layouts/application (24.8ms)
+Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 0.3ms)
+Started POST "/imovels" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by ImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "imovel"=>{"endereco"=>"campos", "area"=>"80.5", "quarto"=>"1", "sala"=>"1", "cozinha"=>"1", "banheiro"=>"1", "areaExterna"=>"30.5", "areaDeServico"=>"1", "garagem"=>"1", "tipo_de_imovel_id"=>"1", "proprietario_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 80.5], ["areaDeServico", 1.0], ["areaExterna", 30.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:26.937405"], ["endereco", "campos"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-27 18:33:26.937405"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/imovels/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/imovels/1" for 127.0.0.1 at 2014-10-27 11:33:26 -0700
+Processing by ImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTipoDeImovel Load (0.2ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered imovels/show.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 39ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:27.008826"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:27.008826"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 18:33:27.011146"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 18:33:27.011146"], ["valor", 200000.0]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.5], ["areaDeServico", 1.5], ["areaExterna", 1.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:27.013418"], ["endereco", "MyString"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-27 18:33:27.013418"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/imovels/1/edit" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTipoDeImovel Load (0.5ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered imovels/_form.html.haml (10.9ms)
+  Rendered imovels/edit.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 68ms (Views: 63.0ms | ActiveRecord: 0.7ms)
+Started PATCH "/imovels/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "imovel"=>{"endereco"=>"campos", "area"=>"80.5", "quarto"=>"1", "sala"=>"1", "cozinha"=>"1", "banheiro"=>"1", "areaExterna"=>"30.5", "areaDeServico"=>"1", "garagem"=>"1", "tipo_de_imovel_id"=>"1", "proprietario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "imovels" SET "area" = ?, "areaDeServico" = ?, "areaExterna" = ?, "endereco" = ?, "updated_at" = ? WHERE "imovels"."id" = 1  [["area", 80.5], ["areaDeServico", 1.0], ["areaExterna", 30.5], ["endereco", "campos"], ["updated_at", "2014-10-27 18:33:27.106775"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/imovels/1
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/imovels/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProprietario Load (0.0ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered imovels/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:27.162441"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:27.162441"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 18:33:27.164997"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 18:33:27.164997"], ["valor", 200000.0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "proprietario_id", "quarto", "sala", "tipo_de_imovel_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["area", 1.5], ["areaDeServico", 1.5], ["areaExterna", 1.5], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:27.167494"], ["endereco", "MyString"], ["garagem", 1], ["proprietario_id", 1], ["quarto", 1], ["sala", 1], ["tipo_de_imovel_id", 1], ["updated_at", "2014-10-27 18:33:27.167494"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/imovels" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ImovelsController#index as HTML
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered imovels/index.html.haml within layouts/application (8.4ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.3ms)
+Started DELETE "/imovels/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ImovelsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mImovel Load (0.1ms)[0m  [1mSELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "imovels" WHERE "imovels"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/imovels
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+Started GET "/imovels" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ImovelsController#index as HTML
+  [1m[36mImovel Load (0.2ms)[0m  [1mSELECT "imovels".* FROM "imovels"[0m
+  Rendered imovels/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:27.265946"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 18:33:27.265946"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:27.268643"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:27.268643"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/proposta/new" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#new as HTML
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered proposta/_form.html.haml (12.1ms)
+  Rendered proposta/new.html.haml within layouts/application (15.6ms)
+Completed 200 OK in 77ms (Views: 69.4ms | ActiveRecord: 0.7ms)
+Started POST "/proposta" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#create as HTML
+  Parameters: {"utf8"=>"✓", "propostum"=>{"valor"=>"200.0", "status"=>"pendente", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 18:33:27.363224"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-27 18:33:27.363224"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proposta/1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/proposta/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.2ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/show.html.haml within layouts/application (5.1ms)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:27.436002"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 18:33:27.436002"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:27.442527"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:27.442527"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 18:33:27.446371"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-27 18:33:27.446371"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proposta/1/edit" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (2.5ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.2ms)[0m  SELECT "imovels".* FROM "imovels"
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered proposta/_form.html.haml (5.0ms)
+  Rendered proposta/edit.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 49ms (Views: 43.4ms | ActiveRecord: 2.8ms)
+Started PATCH "/proposta/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#update as HTML
+  Parameters: {"utf8"=>"✓", "propostum"=>{"valor"=>"200.0", "status"=>"pendente", "imovel_id"=>"1", "usuario_id"=>"1"}, "commit"=>"Save", "id"=>"1"}
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proposta/1
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/proposta/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPropostum Load (0.1ms)[0m  [1mSELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.0ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/show.html.haml within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "imovels" ("area", "areaDeServico", "areaExterna", "banheiro", "cozinha", "created_at", "endereco", "garagem", "quarto", "sala", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["area", 1.0], ["areaDeServico", 2.0], ["areaExterna", 1.0], ["banheiro", 1], ["cozinha", 1], ["created_at", "2014-10-27 18:33:27.556267"], ["endereco", "campos"], ["garagem", 3], ["quarto", 1], ["sala", 1], ["updated_at", "2014-10-27 18:33:27.556267"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.234.678-99"], ["created_at", "2014-10-27 18:33:27.559073"], ["email", "saul@google.com"], ["endereco", "campos"], ["nome", "Saul"], ["telefone", "232323"], ["updated_at", "2014-10-27 18:33:27.559073"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proposta" ("created_at", "imovel_id", "status", "updated_at", "usuario_id", "valor") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 18:33:27.561138"], ["imovel_id", 1], ["status", "pendente"], ["updated_at", "2014-10-27 18:33:27.561138"], ["usuario_id", 1], ["valor", 200.0]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proposta" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#index as HTML
+  [1m[36mPropostum Load (0.4ms)[0m  [1mSELECT "proposta".* FROM "proposta"[0m
+  [1m[35mImovel Load (0.1ms)[0m  SELECT  "imovels".* FROM "imovels"  WHERE "imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proposta/index.html.haml within layouts/application (10.4ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.7ms)
+Started DELETE "/proposta/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT  "proposta".* FROM "proposta"  WHERE "proposta"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "proposta" WHERE "proposta"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proposta
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+Started GET "/proposta" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by PropostaController#index as HTML
+  [1m[35mPropostum Load (0.1ms)[0m  SELECT "proposta".* FROM "proposta"
+  Rendered proposta/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/proprietarios/new" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#new as HTML
+  Rendered proprietarios/_form.html.haml (7.3ms)
+  Rendered proprietarios/new.html.haml within layouts/application (28.3ms)
+Completed 200 OK in 93ms (Views: 92.4ms | ActiveRecord: 0.0ms)
+Started POST "/proprietarios" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "proprietario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.456.899-00"], ["created_at", "2014-10-27 18:33:27.766290"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 18:33:27.766290"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proprietarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/proprietarios/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered proprietarios/show.html.haml within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "MyString"], ["created_at", "2014-10-27 18:33:27.812486"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 18:33:27.812486"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/proprietarios/1/edit" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered proprietarios/_form.html.haml (7.7ms)
+  Rendered proprietarios/edit.html.haml within layouts/application (10.1ms)
+Completed 200 OK in 64ms (Views: 62.6ms | ActiveRecord: 0.1ms)
+Started PATCH "/proprietarios/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "proprietario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "proprietarios" SET "cpf" = ?, "email" = ?, "endereco" = ?, "nome" = ?, "telefone" = ?, "updated_at" = ? WHERE "proprietarios"."id" = 1[0m  [["cpf", "123.456.899-00"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 18:33:27.889686"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/proprietarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/proprietarios/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProprietario Load (0.1ms)[0m  [1mSELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered proprietarios/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 38.8ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "proprietarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "MyString"], ["created_at", "2014-10-27 18:33:27.944963"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 18:33:27.944963"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/proprietarios" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#index as HTML
+  [1m[36mProprietario Load (0.2ms)[0m  [1mSELECT "proprietarios".* FROM "proprietarios"[0m
+  Rendered proprietarios/index.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.2ms)
+Started DELETE "/proprietarios/1" for 127.0.0.1 at 2014-10-27 11:33:27 -0700
+Processing by ProprietariosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProprietario Load (0.1ms)[0m  SELECT  "proprietarios".* FROM "proprietarios"  WHERE "proprietarios"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "proprietarios" WHERE "proprietarios"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/proprietarios
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/proprietarios" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by ProprietariosController#index as HTML
+  [1m[35mProprietario Load (0.2ms)[0m  SELECT "proprietarios".* FROM "proprietarios"
+  Rendered proprietarios/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/tipo_de_imovels/new" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#new as HTML
+  Rendered tipo_de_imovels/_form.html.haml (7.7ms)
+  Rendered tipo_de_imovels/new.html.haml within layouts/application (14.9ms)
+Completed 200 OK in 55ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+Started POST "/tipo_de_imovels" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#create as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa", "tipoDeContrato"=>"venda", "valor"=>"200500"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 18:33:28.104873"], ["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 18:33:28.104873"], ["valor", 200500.0]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-10-27 18:33:28.157260"], ["descricao", "MyString"], ["tipoDeContrato", "MyString"], ["updated_at", "2014-10-27 18:33:28.157260"], ["valor", 1.5]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/tipo_de_imovels/1/edit" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tipo_de_imovels/_form.html.haml (4.6ms)
+  Rendered tipo_de_imovels/edit.html.haml within layouts/application (6.3ms)
+Completed 200 OK in 49ms (Views: 47.7ms | ActiveRecord: 0.1ms)
+Started PATCH "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#update as HTML
+  Parameters: {"utf8"=>"✓", "tipo_de_imovel"=>{"descricao"=>"casa", "tipoDeContrato"=>"venda", "valor"=>"200500"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "tipo_de_imovels" SET "descricao" = ?, "tipoDeContrato" = ?, "updated_at" = ?, "valor" = ? WHERE "tipo_de_imovels"."id" = 1[0m  [["descricao", "casa"], ["tipoDeContrato", "venda"], ["updated_at", "2014-10-27 18:33:28.217183"], ["valor", 200500.0]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/tipo_de_imovels/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tipo_de_imovels/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "tipo_de_imovels" ("created_at", "descricao", "tipoDeContrato", "updated_at", "valor") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-10-27 18:33:28.273060"], ["descricao", "MyString"], ["tipoDeContrato", "MyString"], ["updated_at", "2014-10-27 18:33:28.273060"], ["valor", 1.5]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[36mTipoDeImovel Load (0.1ms)[0m  [1mSELECT "tipo_de_imovels".* FROM "tipo_de_imovels"[0m
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 49ms (Views: 48.0ms | ActiveRecord: 0.1ms)
+Started DELETE "/tipo_de_imovels/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT  "tipo_de_imovels".* FROM "tipo_de_imovels"  WHERE "tipo_de_imovels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "tipo_de_imovels" WHERE "tipo_de_imovels"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/tipo_de_imovels
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/tipo_de_imovels" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by TipoDeImovelsController#index as HTML
+  [1m[35mTipoDeImovel Load (0.1ms)[0m  SELECT "tipo_de_imovels".* FROM "tipo_de_imovels"
+  Rendered tipo_de_imovels/index.html.haml within layouts/application (0.9ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/usuarios/new" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#new as HTML
+  Rendered usuarios/_form.html.haml (6.9ms)
+  Rendered usuarios/new.html.haml within layouts/application (26.7ms)
+Completed 200 OK in 101ms (Views: 99.9ms | ActiveRecord: 0.0ms)
+Started POST "/usuarios" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#create as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "123.456.899-00"], ["created_at", "2014-10-27 18:33:28.487338"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 18:33:28.487338"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["cpf", "MyString"], ["created_at", "2014-10-27 18:33:28.542156"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 18:33:28.542156"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/usuarios/1/edit" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered usuarios/_form.html.haml (9.7ms)
+  Rendered usuarios/edit.html.haml within layouts/application (12.4ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.1ms)
+Started PATCH "/usuarios/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#update as HTML
+  Parameters: {"utf8"=>"✓", "usuario"=>{"nome"=>"Ana", "endereco"=>"campos", "cpf"=>"123.456.899-00", "telefone"=>"23234456", "email"=>"ana@gmail.com"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "usuarios" SET "cpf" = ?, "email" = ?, "endereco" = ?, "nome" = ?, "telefone" = ?, "updated_at" = ? WHERE "usuarios"."id" = 1[0m  [["cpf", "123.456.899-00"], ["email", "ana@gmail.com"], ["endereco", "campos"], ["nome", "Ana"], ["telefone", "23234456"], ["updated_at", "2014-10-27 18:33:28.611839"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/usuarios/1
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+Started GET "/usuarios/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUsuario Load (0.1ms)[0m  [1mSELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered usuarios/show.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "usuarios" ("cpf", "created_at", "email", "endereco", "nome", "telefone", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["cpf", "MyString"], ["created_at", "2014-10-27 18:33:28.665053"], ["email", "MyString"], ["endereco", "MyString"], ["nome", "MyString"], ["telefone", "MyString"], ["updated_at", "2014-10-27 18:33:28.665053"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.6ms)[0m  [1mSELECT "usuarios".* FROM "usuarios"[0m
+  Rendered usuarios/index.html.haml within layouts/application (9.5ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+Started DELETE "/usuarios/1" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT  "usuarios".* FROM "usuarios"  WHERE "usuarios"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "usuarios" WHERE "usuarios"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/usuarios
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/usuarios" for 127.0.0.1 at 2014-10-27 11:33:28 -0700
+Processing by UsuariosController#index as HTML
+  [1m[35mUsuario Load (0.1ms)[0m  SELECT "usuarios".* FROM "usuarios"
+  Rendered usuarios/index.html.haml within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
